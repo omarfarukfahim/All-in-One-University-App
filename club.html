@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Club & Events</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script type="module" src="https://unpkg.com/cally"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar bg-base-200 shadow-md">
+      <label for="my-drawer" class="drawer-button"
+        ><div class="w-12"><img src="./assets/menu.png" alt="" /></div
+      ></label>
+      <div class="flex-1">
+        <!-- Sidebar Toggle Button -->
+        <label for="my-drawer" class="btn btn-square btn-ghost lg:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </label>
+        <a class="btn btn-ghost text-xl mx-9">Clubs & Events</a>
+      </div>
+
+      <!-- Search Box -->
+      <div class="flex items-center px-4">
+        <input
+          type="text"
+          placeholder="Search"
+          class="input input-bordered w-72"
+        />
+      </div>
+
+      <!-- Navbar Items (Notification & Profile) -->
+      <div class="flex space-x-4">
+        <!-- Notification Bell -->
+        <button class="btn btn-ghost">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 17h5l-1.405-1.405A2.992 2.992 0 0018 13V7a6 6 0 10-12 0v6a2.992 2.992 0 00-1.595 2.595L4 17h5m6 0v2a2 2 0 11-4 0v-2m4 0H9"
+            />
+          </svg>
+        </button>
+        <!-- Profile Picture -->
+        <div class="relative">
+          <button class="btn btn-ghost">
+            <img
+              class="w-10 h-10 rounded-full"
+              src="./assets/bussiness-man.png"
+              alt="Profile Picture"
+            />
+          </button>
+        </div>
+      </div>
+      <!-- Theme Toggle -->
+      <button onclick="toggleTheme()" class="btn rounded-full ml-4">🌙</button>
+    </div>
+
+    <!-- card box -->
+    <div class="flex items-center justify-center mt-10">
+      <div class="grid grid-cols- md:grid-cols-3 gap-6">
+        <!-- Club Card 1 -->
+        <div
+          class="flex items-center w-80 bg-[#FFCDCD] p-6 rounded-lg shadow-md"
+        >
+          <div>
+            <h2 class="text-xl font-bold text-gray-800">Coding Club</h2>
+            <p class="text-gray-600 mt-2">
+              "Weekly coding sessions and hackathons."
+            </p>
+            <div class="mt-4">
+              <button
+                class="bg-green-400 text-white px-4 py-2 rounded-lg hover:bg-green-500"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+          <div class="ml-4">
+            <img
+              src="./assets/coding.png"
+              alt="Coding Club Logo"
+              class="w-14"
+            />
+          </div>
+        </div>
+
+        <!-- Club Card 2 -->
+        <div
+          class="flex items-center w-80 bg-[#FFCDCD] p-6 rounded-lg shadow-md"
+        >
+          <div>
+            <h2 class="text-xl font-bold text-gray-800">Photography Club</h2>
+            <p class="text-gray-600 mt-2">
+              "Capture moments and learn photography skills."
+            </p>
+            <div class="mt-4">
+              <button
+                class="bg-green-400 text-white px-4 py-2 rounded-lg hover:bg-green-500"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+          <div class="ml-4">
+            <img
+              src="./assets/photography.png"
+              alt="Coding Club Logo"
+              class="w-20"
+            />
+          </div>
+        </div>
+
+        <!-- Club Card 3 -->
+        <div
+          class="flex items-center w-80 bg-[#FFCDCD] p-6 rounded-lg shadow-md"
+        >
+          <div>
+            <h2 class="text-xl font-bold text-gray-800">Sports Club</h2>
+            <p class="text-gray-600 mt-2">
+              "Join exciting sports activities and tournaments."
+            </p>
+            <div class="mt-4">
+              <button
+                class="bg-green-400 text-white px-4 py-2 rounded-lg hover:bg-green-500"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+          <div class="ml-4">
+            <img src="./assets/sports.png" alt="Club Logo" class="w-16" />
+          </div>
+        </div>
+
+        <!-- Club Card 4 -->
+        <div
+          class="flex items-center w-80 bg-[#FFCDCD] p-6 rounded-lg shadow-md"
+        >
+          <div>
+            <h2 class="text-xl font-bold text-gray-800">Cultural Club</h2>
+            <p class="text-gray-600 mt-2">
+              "Celebrate diversity with cultural events and festivals."
+            </p>
+            <div class="mt-4">
+              <button
+                class="bg-green-400 text-white px-4 py-2 rounded-lg hover:bg-green-500"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+          <div class="ml-4">
+            <img src="./assets/dance.png" alt=" Club Logo" class="w-24" />
+          </div>
+        </div>
+
+        <!-- Club Card 5 -->
+        <div
+          class="flex items-center w-80 bg-[#FFCDCD] p-6 rounded-lg shadow-md"
+        >
+          <div>
+            <h2 class="text-xl font-bold text-gray-800">Debating Club</h2>
+            <p class="text-gray-600 mt-2">
+              "Sharpen your public speaking and critical thinking skills."
+            </p>
+            <div class="mt-4">
+              <button
+                class="bg-green-400 text-white px-4 py-2 rounded-lg hover:bg-green-500"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+          <div class="ml-2">
+            <img src="./assets/debate (1).png" alt=" Club Logo" class="w-20" />
+          </div>
+        </div>
+
+        <!-- Club Card 6 -->
+        <div
+          class="flex items-center w-80 bg-[#FFCDCD] p-6 rounded-lg shadow-md"
+        >
+          <div>
+            <h2 class="text-xl font-bold text-gray-800">Robotics Club</h2>
+            <p class="text-gray-600 mt-2">
+              "Build and program robots for competitions and innovation."
+            </p>
+            <div class="mt-4">
+              <button
+                class="bg-green-400 text-white px-4 py-2 rounded-lg hover:bg-green-500"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+          <div class="ml-2">
+            <img src="./assets/robot.png" alt=" Club Logo" class="w-24" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar Drawer -->
+    <div class="drawer">
+      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content">
+        <!-- Page content here -->
+      </div>
+      <div class="drawer-side">
+        <label
+          for="my-drawer"
+          aria-label="close sidebar"
+          class="drawer-overlay"
+        ></label>
+        <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+          <!-- Sidebar content here -->
+          <ul class="list bg-base-100 rounded-box shadow-md">
+            <li>
+              <div class="w-48">
+                <img src="./assets/Logo.png" alt="Logo" />
+              </div>
+            </li>
+            <li class="list-row" data-page="dashboard.html">
+              <div class="flex items-center">
+                <img class="size-10 rounded-box" src="./assets/appointment.png" alt="Dashboard Icon" />
+                <span class="text-xl font-semibold ml-2">Dashboard</span>
+              </div>
+            </li>
+            <li class="list-row" data-page="cafe.html">
+              <div class="flex items-center">
+                <img class="size-10 rounded-box" src="./assets/coffee-table.png" alt="Cafe Icon" />
+                <span class="text-xl font-semibold ml-2">Cafe</span>
+              </div>
+            </li>
+            <li class="list-row" data-page="campus.html">
+              <div class="flex items-center">
+                <img class="size-10 rounded-box" src="./assets/destination.png" alt="Campus Navigator Icon" />
+                <span class="text-xl font-semibold ml-2">Campus Navigator</span>
+              </div>
+            </li>
+            <li class="list-row" data-page="faculty.html">
+              <div class="flex items-center">
+                <img class="size-10 rounded-box" src="./assets/profile.png" alt="Faculty Icon" />
+                <span class="text-xl font-semibold ml-2">Class & Faculty</span>
+              </div>
+            </li>
+            <li class="list-row" data-page="club.html">
+              <div class="flex items-center">
+                <img class="size-10 rounded-box" src="assets/club-glyph-icon-vector.png" alt="Club Icon" />
+                <span class="text-xl font-semibold ml-2">Club</span>
+              </div>
+            </li>
+            <li class="list-row" data-page="bus.html">
+              <div class="flex items-center">
+                <img class="size-10 rounded-box" src="./assets/bus.png" alt="Bus Schedules Icon" />
+                <span class="text-xl font-semibold ml-2">Bus Schedules</span>
+              </div>
+            </li>
+          </ul>          
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      function toggleTheme() {
+        let html = document.documentElement;
+        html.dataset.theme = html.dataset.theme === "dark" ? "silk" : "dark";
+      }
+    </script>
+    <script src="./script/navigation.js"></script>
+  </body>
+</html>

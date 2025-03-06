@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="w-screen h-screen">
+    <section
+      class="max-w-md min-h-screen mx-auto px-6 flex justify-center items-center"
+    >
+      <header class="mt-10 p-10 bg-green-300 rounded-xl">
+        <nav>
+          <div class="flex justify-center items-center">
+            <img class="w-40" src="./assets/Logo.png" alt="logo" />
+          </div>
+
+          <!-- login section    -->
+          <div class="hero">
+            <div class="hero-content flex-col">
+              <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <form class="card-body">
+                  <fieldset class="fieldset">
+                    <label class="fieldset-label font-semibold"
+                      >Student ID</label
+                    >
+                    <input
+                      id="studentId"
+                      value="22235103603"
+                      type="text"
+                      required
+                      class="input"
+                      placeholder="Enter Your Student ID"
+                    />
+                    <label class="fieldset-label font-semibold">Password</label>
+                    <input
+                      id="password"
+                      type="text"
+                      required
+                      class="input"
+                      placeholder="Enter Your Password"
+                    />
+                    <div><a class="link link-hover">Forgot password?</a></div>
+                    <button
+                      id="login-btn"
+                      class="btn btn-neutral mt-4 bg-[#32935A]"
+                    >
+                      Login
+                    </button>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </section>
+    <script src="./script/login.js"></script>
+  </body>
+</html>

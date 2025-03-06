@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafe</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script type="module" src="https://unpkg.com/cally"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar bg-base-200 shadow-md">
+      <label for="my-drawer" class="drawer-button"
+        ><div class="w-12"><img src="./assets/menu.png" alt="" /></div
+      ></label>
+      <div class="flex-1">
+        <!-- Sidebar Toggle Button -->
+        <label for="my-drawer" class="btn btn-square btn-ghost lg:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </label>
+        <a class="btn btn-ghost text-xl mx-9">Cafe</a>
+      </div>
+
+      <!-- Search Box -->
+      <div class="flex items-center px-4">
+        <input
+          type="text"
+          placeholder="Search"
+          class="input input-bordered w-72"
+        />
+      </div>
+
+      <!-- Navbar Items (Notification & Profile) -->
+      <div class="flex space-x-4">
+        <!-- Notification Bell -->
+        <button class="btn btn-ghost">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 17h5l-1.405-1.405A2.992 2.992 0 0018 13V7a6 6 0 10-12 0v6a2.992 2.992 0 00-1.595 2.595L4 17h5m6 0v2a2 2 0 11-4 0v-2m4 0H9"
+            />
+          </svg>
+        </button>
+        <!-- Profile Picture -->
+        <div class="relative">
+          <button class="btn btn-ghost">
+            <img
+              class="w-10 h-10 rounded-full"
+              src="./assets/bussiness-man.png"
+              alt="Profile Picture"
+            />
+          </button>
+        </div>
+      </div>
+      <!-- Theme Toggle -->
+      <button onclick="toggleTheme()" class="btn rounded-full ml-4">🌙</button>
+    </div>
+
+    <!-- Sidebar Drawer -->
+    <div class="drawer z-2">
+      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content">
+        <!-- Page content here -->
+      </div>
+      <div class="drawer-side">
+        <label
+          for="my-drawer"
+          aria-label="close sidebar"
+          class="drawer-overlay"
+        ></label>
+        <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+          <!-- Sidebar content here -->
+          <ul class="list bg-base-100 rounded-box shadow-md">
+            <li>
+              <div class="w-48">
+                <img src="./assets/Logo.png" alt="Logo" />
+              </div>
+            </li>
+            <li class="list-row" data-page="dashboard.html">
+              <div class="flex items-center">
+                <img class="size-10 rounded-box" src="./assets/appointment.png" alt="Dashboard Icon" />
+                <span class="text-xl font-semibold ml-2">Dashboard</span>
+              </div>
+            </li>
+            <li class="list-row" data-page="cafe.html">
+              <div class="flex items-center">
+                <img class="size-10 rounded-box" src="./assets/coffee-table.png" alt="Cafe Icon" />
+                <span class="text-xl font-semibold ml-2">Cafe</span>
+              </div>
+            </li>
+            <li class="list-row" data-page="campus.html">
+              <div class="flex items-center">
+                <img class="size-10 rounded-box" src="./assets/destination.png" alt="Campus Navigator Icon" />
+                <span class="text-xl font-semibold ml-2">Campus Navigator</span>
+              </div>
+            </li>
+            <li class="list-row" data-page="faculty.html">
+              <div class="flex items-center">
+                <img class="size-10 rounded-box" src="./assets/profile.png" alt="Faculty Icon" />
+                <span class="text-xl font-semibold ml-2">Class & Faculty</span>
+              </div>
+            </li>
+            <li class="list-row" data-page="club.html">
+              <div class="flex items-center">
+                <img class="size-10 rounded-box" src="assets/club-glyph-icon-vector.png" alt="Club Icon" />
+                <span class="text-xl font-semibold ml-2">Club</span>
+              </div>
+            </li>
+            <li class="list-row" data-page="bus.html">
+              <div class="flex items-center">
+                <img class="size-10 rounded-box" src="./assets/bus.png" alt="Bus Schedules Icon" />
+                <span class="text-xl font-semibold ml-2">Bus Schedules</span>
+              </div>
+            </li>
+          </ul>          
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto flex space-x-6">
+      <!-- Left Section: Menu -->
+      <div class="w-2/3 bg-white p-6 rounded-lg shadow-md">
+        <!-- Category Tabs -->
+        <div class="flex space-x-4 mb-6">
+          <button class="bg-green-300 px-6 py-2 rounded-lg font-semibold">
+            Breakfast
+          </button>
+          <button class="bg-gray-300 px-6 py-2 rounded-lg">Lunch</button>
+          <button class="bg-gray-300 px-6 py-2 rounded-lg">Snacks</button>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="space-y-4">
+          <!-- Pancakes -->
+          <div class="flex items-center justify-between border p-4 rounded-lg shadow">
+            <div class="flex items-center space-x-4">
+              <img
+                src="https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2021/09/beef-burger.jpg?;"
+                class="w-20 h-20 rounded-lg"
+                alt="Pancakes"
+              />
+              <div>
+                <h2 class="text-lg font-bold">Pancakes</h2>
+                <p class="text-sm text-gray-600">Calories: 350 | Protein: 80g</p>
+                <span class="bg-green-200 px-2 py-1 rounded text-sm">৳70</span>
+              </div>
+            </div>
+            <button class="bg-green-500 add-to-order p-2 rounded-full w-20 text-white text-2xl font-bold">
+              +
+            </button>
+            
+            
+            
+          </div>
+          <!-- Omelette -->
+          <div
+            class="flex items-center justify-between border p-4 rounded-lg shadow"
+          >
+            <div class="flex items-center space-x-4">
+              <img
+                src="https://msmarket.coop/wp-content/uploads/omlete.jpg"
+                class="w-20 h-20 rounded-lg"
+              />
+              <div>
+                <h2 class="text-lg font-bold">Omelette</h2>
+                <p class="text-sm text-gray-600">
+                  Calories: 400 | Protein: 15g
+                </p>
+                <span class="bg-green-200 px-2 py-1 rounded text-sm">৳20</span>
+              </div>
+            </div>
+            <button class="bg-green-500 add-to-order p-2 rounded-full w-20 text-white text-2xl font-bold">
+              +
+            </button>
+            
+            
+          </div>
+
+          <!-- Noodles -->
+          <div
+            class="flex items-center justify-between border p-4 rounded-lg shadow"
+          >
+            <div class="flex items-center space-x-4">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVPvcZIxeA9bZukK18CymY32OqFUTVbkKXgQ&s"
+                class="w-20 h-20 rounded-lg"
+              />
+              <div>
+                <h2 class="text-lg font-bold">Noodles</h2>
+                <p class="text-sm text-gray-600">
+                  Calories: 138 | Protein: 15g
+                </p>
+                <span class="bg-green-200 px-2 py-1 rounded text-sm">৳20</span>
+              </div>
+            </div>
+            <button class="bg-green-500 add-to-order p-2 rounded-full w-20 text-white text-2xl font-bold">
+              +
+            </button>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Section: Order Summary -->
+<div class="w-1/3 bg-white p-6 rounded-lg shadow-md">
+  <h2 class="text-xl font-bold mb-4">Order Details</h2>
+
+  <!-- Order Items Container (initially empty) -->
+  <div id="order-summary" class="border-b pb-4 mb-4">
+    <!-- Order items will be added here dynamically -->
+  </div>
+
+  <!-- Totals Section -->
+  <div class="border-b pb-4 mb-4">
+    <div class="flex justify-between mb-2">
+      <span>Items Total</span>
+      <span id="items-total">৳0</span>
+    </div>
+    <div class="flex justify-between mb-2">
+      <span>Discount</span>
+      <span id="discount">৳10</span>
+    </div>
+    <div class="flex justify-between text-lg font-bold">
+      <span>To Pay</span>
+      <span id="total-payment">৳0</span>
+    </div>
+  </div>
+
+  <!-- Place Order Button -->
+  <button id="place-order" class="w-full bg-green-500 text-white py-2 rounded-lg">
+    PLACE ORDER
+  </button>
+</div>
+</div>
+
+    <script>
+      function toggleTheme() {
+        let html = document.documentElement;
+        html.dataset.theme = html.dataset.theme === "dark" ? "silk" : "dark";
+        // document.getElementsByClassName("c").style.backgroundColor="red"
+      }
+    </script>
+    <script src="./script/navigation.js"></script>
+    <script src="./script/cafe.js"></script>
+    <script src="./script/order.js"></script>
+    <script src="./script/addtocart.js"></script>
+  </body>
+</html>
